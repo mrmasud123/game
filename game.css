@@ -1,0 +1,204 @@
+body {
+    background-color: black;
+}
+
+.wrapper {
+    position: relative;
+    width: 50%;
+    height: 100vh;
+    margin: auto;
+}
+
+.hide {
+    display: none;
+}
+
+.transition {
+    transition: 5s;
+}
+
+.game-content {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    bottom: 0;
+    left: -100%;
+    width: 65%;
+    height: 200px;
+    background: linear-gradient(184deg, #ff4747, #780080);
+    padding: 20px;
+}
+
+.images {
+    width: 150px;
+}
+
+img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.images:nth-child(2) {
+    border-left: 1px solid darkgray;
+    border-right: 1px solid rgb(187, 81, 81);
+}
+
+.game-header {
+    text-align: center;
+}
+
+div#win-box {
+    width: 10%;
+    background: gainsboro;
+    padding: 2px 25px;
+    text-align: center;
+    font-size: 25px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+div#win-box {
+    width: 24%;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    animation: animate 5s infinite;
+}
+
+div#win-box::before {
+    width: 10%;
+    height: 50%;
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    border-left: 2px solid black;
+    border-top: 2px solid;
+    animation: borderAnimate 5s infinite;
+}
+
+div#win-box::after {
+    width: 10%;
+    height: 50%;
+    content: "";
+    right: 0;
+    position: absolute;
+    border-right: 2px solid black;
+    border-bottom: 2px solid;
+    bottom: 0;
+    animation: borderAnimate 5s infinite;
+}
+
+div#select-box {
+    position: relative;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 23px;
+}
+
+span {
+    font-size: 19px;
+
+}
+
+button#endgame {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: -100%;
+    bottom: 20%;
+    font-size: 20px;
+    font-family: math;
+    padding: 5px 40px;
+    cursor: pointer;
+    box-shadow: inset 2px 2px 10px 4px #00000042;
+    border: none;
+    border-radius: 6px;
+
+}
+
+@keyframes animate {
+    0% {
+        background-color: blue;
+    }
+
+    50% {
+        background-color: red;
+    }
+
+    75% {
+        background-color: purple;
+    }
+
+    100% {
+        background-color: tomato;
+    }
+}
+
+@keyframes borderAnimate {
+    0% {
+        border-color: tomato;
+    }
+
+    50% {
+        border-color: purple;
+    }
+
+    75% {
+        border-color: red;
+    }
+
+    100% {
+        border-color: blue;
+    }
+}
+
+@keyframes endbox {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    div#win-box {
+        width: 75%;
+        font-size: 15px;
+    }
+
+    .game-content {
+        height: 130px;
+        width: 90%;
+    }
+
+    .wrapper {
+        width: 90%;
+        font-size: 11px;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    button#endgame {
+        font-size: 15px;
+        padding: 5px 10px;
+    }
+    span{
+        font-size: 15px;
+    }
+}
